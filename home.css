@@ -57,7 +57,7 @@ body {
   padding-bottom: 20px;
 }
 .joinRoomArea .logo_area img {
-  width: 250px;
+  width: 340px;
   filter: drop-shadow(5px 5px 5px #c7c7c7);
 }
 .joinRoomArea #joinRoom {
@@ -397,7 +397,7 @@ body {
   width: 100%;
 }
 #finished .container .logo_area img {
-  width: 150px;
+  width: 340px;
   filter: drop-shadow(5px 5px 5px #9b9b9b);
 }
 #finished .container h1 {
@@ -405,10 +405,8 @@ body {
   font-size: 60px;
   font-weight: 900;
 }
-#finished .container button {
-  background-color: rgba(255, 255, 255, 0.7960784314);
+#finished .container a {
   font-size: 18px;
   color: #54951b;
   font-weight: bold;
-  border: none;
 }/*# sourceMappingURL=home.css.map */

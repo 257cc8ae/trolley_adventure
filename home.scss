@@ -60,7 +60,7 @@ body {
         padding-bottom: 20px;
 
         img {
-            width: 250px;
+            width: 340px;
             filter: drop-shadow(5px 5px 5px #c7c7c7);
         }
     }
@@ -446,7 +446,7 @@ body {
             width: 100%;
 
             img {
-                width: 150px;
+                width: 340px;
                 filter: drop-shadow(5px 5px 5px #9b9b9b);
             }
         }
@@ -457,12 +457,10 @@ body {
             font-weight: 900;
         }
 
-        button {
-            background-color: #ffffffcb;
+        a {
             font-size: 18px;
             color: #54951b;
             font-weight: bold;
-            border: none;
         }
     }
 
