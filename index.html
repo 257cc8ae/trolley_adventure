@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>トロッコアドベンチャー</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+    <section class="joinRoomArea" id="start_game_area">
+        <div>
+            <div class="logo_area">
+                <img src="logo.png" alt="トロッコアドベンチャー">
+            </div>
+            <div id="joinRoom" autocomplete="off">
+                <h1>クイズをスタートする</h1>
+                <div>
+                    <button class="select_mode_button" type="button" onclick="modeSelectionModal(true)">
+                        イージー
+                    </button>
+                </div>
+                <div class="btn_area">
+                    <button class="joinRoomBtn" id="start_game">次へ</button>
+                </div>
+            </div>
+        </div>
+        <div class="select_mode_modal" id="select_mode_modal">
+            <h1>モードを選択</h1>
+            <div class="modes_detail_area">
+                <div class="mode_detail_card">
+                    <h2>イージー</h2>
+                    <p>
+                        簡単な問題が多いです。進むにつれて問題は難しくなります。
+                        <br>
+                        目安：小学生〜中学生
+                    </p>
+                    <div class="btn_area">
+                        <button class="decide_mode" onclick="selectMode('easy')" value="easy" disabled>選択</button>
+                    </div>
+                </div>
+                <div class="mode_detail_card">
+                    <h2>ノーマル</h2>
+                    <p>
+                        標準的な問題が多いです。進むにつれて問題は難しくなります。
+                        <br>
+                        目安：中学生〜大人
+                    </p>
+                    <div class="btn_area">
+                        <button class="decide_mode" onclick="selectMode('normal')" value="normal">選択</button>
+                    </div>
+                </div>
+                <div class="mode_detail_card">
+                    <h2>ハード</h2>
+                    <p>
+                        非常にマニアックで難しい問題が多いです。進むにつれて問題は難しくなります。
+                        <br>
+                        目安：知識に自信がある人
+                    </p>
+                    <div class="btn_area">
+                        <button class="decide_mode" onclick="selectMode('hard')" value="hard">選択</button>
+                    </div>
+                </div>
+            </div>
+            <div class="decide_area">
+                <button type="button" onclick="modeSelectionModal(false)">決定</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="playground" id="playground">
+        <div class="progress_bar" id="progress_bar">
+
+        </div>
+        <div class="container">
+            <div class="question_area">
+                <div id="question_number" class="question_number"></div>
+                <p class="question" id="question">
+                </p>
+            </div>
+            <div class="selects">
+                <button class="select" onclick="answer_response(this)"></button>
+                <button class="select" onclick="answer_response(this)"></button>
+                <button class="select" onclick="answer_response(this)"></button>
+            </div>
+
+        </div>
+        <div class="results" id="result_area">
+            <div class="result_title">正答</div>
+            <div class="correct_answer" id="correct_answer"></div>
+        </div>
+        <div class="timer" id="timer">30</div>
+    </section>
+    <section id="finished">
+        <div id="particles-js"></div>
+        <div class="container">
+            <div class="logo_area">
+                <img src="logo.png" alt="トロッコアドベンチャー">
+            </div>
+            <h1 id="last-message">ゲームオーバー</h1>
+            <h2>ご来場ありがとうございました</h2>
+            <button onclick="window.location.reload();">タイトル画面へ</button>
+        </div>
+
+    </section>
+    <div class="answer_view" id="answer_view">
+        
+        <div class="container">
+            <div class="icon" id="answer_view_icon">
+                ⭕
+            </div>
+            <div class="text" id="answer_view_text">正解</div>
+        </div>
+    </div>
+    <div class="audios">
+        <audio src="audios/Quiz-Correct_Answer02-1.mp3" id="correct_audio"></audio>
+        <audio src="audios/Quiz-Wrong_Buzzer02-3.mp3" id="wrong_audio"></audio>
+        <audio src="audios/Quiz-Question03-1.mp3" id="new_question_audio"></audio>
+
+    </div>
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="scripts/question.js"></script>
+    <script src="scripts/home.js"></script>
+</body>
+
+</html>
