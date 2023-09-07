@@ -144,6 +144,7 @@ function answerBtn(element) {
 }
 
 function generateQuestionConsole(number, quiz_array) {
+    timer = { state: false, time: 21 };
     generateProgressBar(number);
     new_question_audio.play();
     if (number < 10) {
@@ -302,7 +303,6 @@ document.getElementById("start_game").addEventListener("click", () => {
     selected_questions = selectQuestions(mode);
     generateQuestionConsole(question_number, questions);
     generateProgressBar(question_number);
-    timer.state = true;
 });
 
 setInterval(() => {
