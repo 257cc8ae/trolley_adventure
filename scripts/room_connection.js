@@ -10,11 +10,6 @@ if (searchParams.has('room_id')) {
   document.getElementById("rewriteRoomIdArea").style.display="none"
 }
 
-document.getElementById("joinRoom").addEventListener("submit", (e) => {
-  e.preventDefault();
-  room_id = document.getElementById("roomId").value;
-  socket.emit("join", { id: room_id, previous_id: previous_id });
-});
 
 socket.on("joined", (data) => {
   document.querySelector(".joinRoomArea").style.display = "none";
