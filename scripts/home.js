@@ -144,7 +144,7 @@ function answerBtn(element) {
 }
 
 function generateQuestionConsole(number, quiz_array) {
-    timer = { state: true, time: 21 };
+    timer = { state: true, time: 8 };
     generateProgressBar(number);
     new_question_audio.play();
     if (number < 10) {
@@ -309,13 +309,17 @@ setInterval(() => {
     let timerElement = document.getElementById("timer");
     if (timer.state) {
         timer.time -= 1;
-        if (timer.time < 0) {
+        if (timer.time <= 0) {
             timerElement.style.display = "none";
             timer.state = false;
             answer_response("");
         } else {
             timerElement.textContent = timer.time
             timerElement.style.display = "block";
+            if (1 <= timer.time & timer.time <= 5) {
+                document.getElementById("count").play();
+                console.log(timer.time)
+            }
         }
 
     } else {
