@@ -212,8 +212,8 @@ function answer_show(result) {
             if (wrong_answer_count > 1 | question_number === 9) {
                 document.getElementById("finished").style.display = "flex";
                 document.getElementById("playground").style.display = "none";
-                if (wrong_answer_count === 0) {
-                    document.getElementById("last-message").textContent = "全問正解クリア！";
+                if (question_number === 9) {
+                    document.getElementById("last-message").textContent = "ゲームクリア！";
                     particlesJS("particles-js",{
                         "particles":{
                             "number":{
