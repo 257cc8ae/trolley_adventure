@@ -206,7 +206,7 @@ function answer_show(result) {
         .then(() => {
             document.getElementById("answer_view").style.display = "none";
             document.getElementById("result_area").style.display = "flex";
-            return wait(2000);
+            return wait(3000);
         })
         .then(() => {
             if (wrong_answer_count > 1 | question_number === 9) {
@@ -214,79 +214,79 @@ function answer_show(result) {
                 document.getElementById("playground").style.display = "none";
                 if (question_number === 9) {
                     document.getElementById("last-message").textContent = "ゲームクリア！";
-                    particlesJS("particles-js",{
-                        "particles":{
-                            "number":{
-                                "value":125,//この数値を変更すると紙吹雪の数が増減できる
-                                "density":{
-                                    "enable":false,
-                                    "value_area":400
+                    particlesJS("particles-js", {
+                        "particles": {
+                            "number": {
+                                "value": 125,//この数値を変更すると紙吹雪の数が増減できる
+                                "density": {
+                                    "enable": false,
+                                    "value_area": 400
                                 }
                             },
                             "color": {
-                            "value": ["#EA5532", "#F6AD3C", "#FFF33F", "#00A95F", "#00ADA9", "#00AFEC","#4D4398", "#E85298"]//紙吹雪の色の数を増やすことが出来る
+                                "value": ["#EA5532", "#F6AD3C", "#FFF33F", "#00A95F", "#00ADA9", "#00AFEC", "#4D4398", "#E85298"]//紙吹雪の色の数を増やすことが出来る
                             },
-                            "shape":{
-                                "type":"polygon",//形状はpolygonを指定
-                                "stroke":{
-                                    "width":0,
+                            "shape": {
+                                "type": "polygon",//形状はpolygonを指定
+                                "stroke": {
+                                    "width": 0,
                                 },
-                                "polygon":{
-                                    "nb_sides":5//多角形の角の数
-                                }
-                                },
-                                "opacity":{
-                                    "value":1,
-                                    "random":false,
-                                    "anim":{
-                                        "enable":true,
-                                        "speed":100000,
-                                        "opacity_min":0,
-                                        "sync":false
-                                    }
-                                },
-                                "size":{
-                                    "value":5.305992965476349,
-                                    "random":true,//サイズをランダムに
-                                    "anim":{
-                                        "enable":true,
-                                        "speed":1.345709068776642,
-                                        "size_min": 10,
-                                        "sync":false
-                                    }
-                                },
-                                "line_linked":{
-                                    "enable":false,
-                                },
-                                "move":{
-                                    "enable":true,
-                                "speed":10,//この数値を小さくするとゆっくりな動きになる
-                                "direction":"bottom",//下に向かって落ちる
-                                "random":false,//動きはランダムにならないように
-                                "straight":false,//動きをとどめない
-                                "out_mode":"out",//画面の外に出るように描写
-                                "bounce":false,//跳ね返りなし
-                                    "attract":{
-                                        "enable":false,
-                                        "rotateX":600,
-                                        "rotateY":1200
-                                    }
+                                "polygon": {
+                                    "nb_sides": 5//多角形の角の数
                                 }
                             },
-                            "interactivity":{
-                                "detect_on":"canvas",
-                                "events":{
-                                    "onhover":{
-                                        "enable":false,
-                                    },
-                                    "onclick":{
-                                        "enable":false,
-                                    },
-                                    "resize":true
-                                },
+                            "opacity": {
+                                "value": 1,
+                                "random": false,
+                                "anim": {
+                                    "enable": true,
+                                    "speed": 100000,
+                                    "opacity_min": 0,
+                                    "sync": false
+                                }
                             },
-                            "retina_detect":true
-                        });
+                            "size": {
+                                "value": 5.305992965476349,
+                                "random": true,//サイズをランダムに
+                                "anim": {
+                                    "enable": true,
+                                    "speed": 1.345709068776642,
+                                    "size_min": 10,
+                                    "sync": false
+                                }
+                            },
+                            "line_linked": {
+                                "enable": false,
+                            },
+                            "move": {
+                                "enable": true,
+                                "speed": 10,//この数値を小さくするとゆっくりな動きになる
+                                "direction": "bottom",//下に向かって落ちる
+                                "random": false,//動きはランダムにならないように
+                                "straight": false,//動きをとどめない
+                                "out_mode": "out",//画面の外に出るように描写
+                                "bounce": false,//跳ね返りなし
+                                "attract": {
+                                    "enable": false,
+                                    "rotateX": 600,
+                                    "rotateY": 1200
+                                }
+                            }
+                        },
+                        "interactivity": {
+                            "detect_on": "canvas",
+                            "events": {
+                                "onhover": {
+                                    "enable": false,
+                                },
+                                "onclick": {
+                                    "enable": false,
+                                },
+                                "resize": true
+                            },
+                        },
+                        "retina_detect": true
+                    });
                 }
             } else {
                 question_number += 1;
@@ -316,10 +316,7 @@ setInterval(() => {
         } else {
             timerElement.textContent = timer.time
             timerElement.style.display = "block";
-            if (1 <= timer.time & timer.time <= 5) {
-                document.getElementById("count").play();
-                console.log(timer.time)
-            }
+            document.getElementById("count").play();
         }
 
     } else {
