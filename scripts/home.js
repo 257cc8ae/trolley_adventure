@@ -144,7 +144,7 @@ function answerBtn(element) {
 }
 
 function generateQuestionConsole(number, quiz_array) {
-    timer = { state: true, time: 8 };
+    timer = { state: true, time: 21 };
     generateProgressBar(number);
     new_question_audio.play();
     if (number < 10) {
